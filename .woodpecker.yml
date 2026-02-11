@@ -1,0 +1,30 @@
+# ══════════════════════════════════════
+# Proxmox Secure Lab — Pipeline CI/CD de référence
+# ══════════════════════════════════════
+# 🚧 À adapter lors de la Phase 3.
+
+steps:
+  - name: test
+    image: alpine
+    commands:
+      - echo "Running tests..."
+
+  - name: lint
+    image: golangci/golangci-lint
+    commands:
+      - golangci-lint run
+
+  - name: build
+    image: docker
+    commands:
+      - docker build -t 10.10.30.30:5000/myapp:${CI_COMMIT_SHA:0:8} .
+      - docker push 10.10.30.30:5000/myapp:${CI_COMMIT_SHA:0:8}
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+
+  - name: notify
+    image: alpine/curl
+    commands:
+      - 'curl -X POST $DISCORD_WEBHOOK -H "Content-Type: application/json" -d "{\"content\": \"Build: ${CI_REPO} @ ${CI_COMMIT_SHA:0:8}\"}"'
+    when:
+      - status: [success, failure]

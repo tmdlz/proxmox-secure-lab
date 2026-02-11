@@ -1,0 +1,5 @@
+---
+# Playbook: webserver
+# Usage: ansible-playbook -i inventory/hosts.ini playbooks/webserver.yml --ask-vault-pass
+#
+# 🚧 À compléter lors de la phase correspondante.

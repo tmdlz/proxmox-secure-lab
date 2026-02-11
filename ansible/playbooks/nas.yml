@@ -1,0 +1,5 @@
+---
+# Playbook: nas
+# Usage: ansible-playbook -i inventory/hosts.ini playbooks/nas.yml --ask-vault-pass
+#
+# 🚧 À compléter lors de la phase correspondante.

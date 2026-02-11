@@ -1,0 +1,34 @@
+---
+# ══════════════════════════════════════
+# Secrets — Chiffrés avec Ansible Vault
+# ══════════════════════════════════════
+#
+# Ce fichier DOIT être chiffré avant tout commit :
+#   ansible-vault encrypt inventory/group_vars/vault.yml
+#
+# Pour éditer :
+#   ansible-vault edit inventory/group_vars/vault.yml
+#
+# ⚠️  NE JAMAIS COMMITER CE FICHIER EN CLAIR
+#
+
+# ── Base de données ──
+vault_postgresql_admin_password: "CHANGE_ME"
+vault_postgresql_app_password: "CHANGE_ME"
+
+# ── Forgejo ──
+vault_forgejo_secret_key: "CHANGE_ME"
+
+# ── Woodpecker CI ──
+vault_woodpecker_agent_secret: "CHANGE_ME"
+vault_woodpecker_forgejo_client: "CHANGE_ME"
+vault_woodpecker_forgejo_secret: "CHANGE_ME"
+
+# ── Docker Registry ──
+vault_registry_admin_password: "CHANGE_ME"
+
+# ── Discord webhook (notifications) ──
+vault_discord_webhook_url: "CHANGE_ME"
+
+# ── Tailscale ──
+vault_tailscale_auth_key: "CHANGE_ME"

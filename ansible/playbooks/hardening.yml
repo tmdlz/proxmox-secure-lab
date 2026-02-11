@@ -1,0 +1,5 @@
+---
+# Playbook: hardening
+# Usage: ansible-playbook -i inventory/hosts.ini playbooks/hardening.yml --ask-vault-pass
+#
+# 🚧 À compléter lors de la phase correspondante.

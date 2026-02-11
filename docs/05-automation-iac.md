@@ -1,0 +1,19 @@
+# Phase 5 — Automatisation & Infrastructure as Code
+
+> 🔜 **À venir** — Ce document sera rédigé lors de la mise en œuvre de cette phase.
+
+## Sommaire
+
+*À définir.*
+
+## Objectifs de la phase
+
+*À compléter.*
+
+## Mise en œuvre
+
+*À compléter.*
+
+## Vérifications
+
+*À compléter.*

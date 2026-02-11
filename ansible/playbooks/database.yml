@@ -1,0 +1,5 @@
+---
+# Playbook: database
+# Usage: ansible-playbook -i inventory/hosts.ini playbooks/database.yml --ask-vault-pass
+#
+# 🚧 À compléter lors de la phase correspondante.

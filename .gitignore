@@ -1,0 +1,56 @@
+# ══════════════════════════════════════
+# Proxmox Secure Lab — .gitignore
+# ══════════════════════════════════════
+
+# ── Secrets & credentials ──
+*.key
+*.pem
+*.crt
+*.p12
+*secret*
+*password*
+.env
+.env.*
+
+# ── Ansible ──
+*.retry
+# Le fichier vault est chiffré, OK de le versionner
+!ansible/inventory/group_vars/vault.yml
+
+# ── Terraform ──
+*.tfstate
+*.tfstate.backup
+.terraform/
+.terraform.lock.hcl
+crash.log
+
+# ── Backups ──
+*.vzdump
+*.lzo
+*.zst
+*.tar.gz
+
+# ── GPG ──
+*.gpg
+*.asc
+
+# ── Logs ──
+*.log
+
+# ── OS ──
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ── Editors ──
+.vscode/
+!.vscode/extensions.json
+.idea/
+*.swp
+*.swo
+*~
+
+# ── Python ──
+__pycache__/
+*.pyc
+.venv/
