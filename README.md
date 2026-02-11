@@ -61,7 +61,7 @@ Ce projet sert à la fois de **plateforme d'apprentissage** et de **projet portf
 
 | Catégorie | Technologie |
 |-----------|-------------|
-| **Hyperviseur** | Proxmox VE 8.x (ext4) |
+| **Hyperviseur** | Proxmox VE 9.x (ext4) |
 | **Firewall** | pfSense CE (VM, 512 Mo) |
 | **Automatisation** | Ansible + Bash + Terraform (optionnel) |
 | **CI/CD** | Forgejo + Woodpecker CI + Docker Registry v2 |

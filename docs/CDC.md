@@ -229,7 +229,7 @@ Une machine virtuelle Kali Linux est disponible en VLAN 40 pour effectuer des te
 
 | Composant | Technologie | Version | Justification |
 |-----------|-------------|---------|---------------|
-| Hyperviseur | Proxmox VE | 8.x (stable) | Référence open source, support LXC natif |
+| Hyperviseur | Proxmox VE | 9.x (stable) | Référence open source, support LXC natif |
 | Filesystem | ext4 | — | Un seul disque, ZFS inutile sans mirror |
 | Firewall | pfSense CE | 2.7.x | Référence homelab, très documenté |
 | Reverse Proxy | Nginx | Dernière stable | Léger, performant, très répandu |
@@ -353,7 +353,7 @@ Le projet est découpé en sept phases séquentielles, chacune ayant ses propres
 **PC 1 — Proxmox VE :**
 
 1. Vérification et configuration du BIOS (VT-x, VT-d, désactivation Secure Boot)
-2. Création de la clé USB bootable (ISO Proxmox VE 8.x)
+2. Création de la clé USB bootable (ISO Proxmox VE 9.x)
 3. Installation Proxmox VE avec ext4, partitionnement adapté, hostname `pve-lab.local`
 4. Configuration post-installation (repos, mise à jour, swap, swappiness)
 5. Configuration réseau bridge `vmbr0` avec VLAN-aware
