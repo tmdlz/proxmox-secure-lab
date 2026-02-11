@@ -1,0 +1,42 @@
+---
+# ══════════════════════════════════════
+# Proxmox Secure Lab — Playbook principal
+# ══════════════════════════════════════
+#
+# Déploie l'ensemble de l'infrastructure.
+# Usage :
+#   ansible-playbook -i inventory/hosts.ini site.yml --ask-vault-pass
+#
+# Pour déployer une phase spécifique :
+#   ansible-playbook -i inventory/hosts.ini playbooks/hardening.yml
+
+- name: "Phase commune — Tous les serveurs"
+  hosts: all_servers
+  roles:
+    - common
+    - hardening
+
+- name: "Phase 2 — Reverse Proxy Nginx"
+  hosts: nginx
+  roles:
+    - webserver
+
+- name: "Phase 2 — Base de données PostgreSQL"
+  hosts: postgresql
+  roles:
+    - database
+
+- name: "Phase 2 — Monitoring (VictoriaMetrics + Grafana)"
+  hosts: monitoring
+  roles:
+    - monitoring
+
+- name: "Phase 3 — CI/CD (Forgejo + Woodpecker + Registry)"
+  hosts: cicd
+  roles:
+    - cicd
+
+- name: "Phase 6 — Backup"
+  hosts: all_servers
+  roles:
+    - backup

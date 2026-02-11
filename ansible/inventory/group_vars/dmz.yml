@@ -1,0 +1,16 @@
+---
+# ══════════════════════════════════════
+# Variables — VLAN 40 (DMZ)
+# ══════════════════════════════════════
+
+vlan_id: 40
+vlan_network: 10.10.40.0/24
+vlan_gateway: 10.10.40.254
+
+# ── Kali ──
+kali_ip: 10.10.40.10
+kali_ram_mb: 2048
+kali_cores: 2
+
+# Note : la VM Kali est éteinte par défaut.
+# Elle est démarrée manuellement pour les tests de sécurité.

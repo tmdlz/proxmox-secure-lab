@@ -1,0 +1,26 @@
+---
+# ══════════════════════════════════════
+# Variables — VLAN 20 (Services)
+# ══════════════════════════════════════
+
+vlan_id: 20
+vlan_network: 10.10.20.0/24
+vlan_gateway: 10.10.20.254
+
+# ── Nginx ──
+nginx_ip: 10.10.20.10
+nginx_ssl_cert: /etc/ssl/certs/lab.crt
+nginx_ssl_key: /etc/ssl/private/lab.key
+
+# ── PostgreSQL ──
+postgresql_ip: 10.10.20.20
+postgresql_port: 5432
+postgresql_version: 16
+postgresql_shared_buffers: 128MB
+postgresql_work_mem: 4MB
+postgresql_effective_cache_size: 256MB
+
+# ── Monitoring ──
+monitoring_ip: 10.10.20.30
+victoriametrics_retention: 30d
+victoriametrics_memory_percent: 40

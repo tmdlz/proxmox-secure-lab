@@ -1,0 +1,5 @@
+---
+# Playbook: monitoring
+# Usage: ansible-playbook -i inventory/hosts.ini playbooks/monitoring.yml --ask-vault-pass
+#
+# 🚧 À compléter lors de la phase correspondante.

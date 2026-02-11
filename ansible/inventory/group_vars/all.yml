@@ -1,0 +1,39 @@
+---
+# ══════════════════════════════════════
+# Variables globales — tous les hosts
+# ══════════════════════════════════════
+
+# ── Réseau ──
+domain: lab.local
+dns_server: 10.10.10.254  # pfSense
+ntp_server: pool.ntp.org
+
+# ── SSH ──
+ssh_port: 2222
+ssh_allowed_user: tom
+
+# ── Paquets communs à installer partout ──
+common_packages:
+  - vim
+  - htop
+  - curl
+  - wget
+  - git
+  - tmux
+  - rsync
+  - prometheus-node-exporter
+  - fail2ban
+  - ufw
+  - unattended-upgrades
+
+# ── Monitoring ──
+node_exporter_port: 9100
+victoriametrics_host: 10.10.20.30
+victoriametrics_port: 8428
+grafana_port: 3000
+
+# ── Backup ──
+nas_ip: 10.10.10.2
+nas_backup_path: /backup
+backup_retention_daily: 7
+backup_retention_weekly: 4
