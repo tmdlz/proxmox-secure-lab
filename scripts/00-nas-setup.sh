@@ -4,7 +4,7 @@
 # ══════════════════════════════════════════════════════════════
 #
 # Usage : bash scripts/00-nas-setup.sh
-# Prérequis : exécuter en root sur Debian 12 fraîchement installé
+# Prérequis : exécuter en root sur Debian 13 fraîchement installé
 #
 # 🚧 Ce script sera complété lors de la Phase 0.
 # ══════════════════════════════════════════════════════════════

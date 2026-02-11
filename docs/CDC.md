@@ -103,7 +103,7 @@ Le PC 2 assure la fonction de serveur de sauvegarde. Il reçoit les backups des 
 | **Processeur** | Intel Core i5-5200U (2C/4T, 5e gen, Broadwell) | Suffisant pour NFS et rsync |
 | **Mémoire vive** | 8 Go DDR3L | Confortable pour un serveur de fichiers |
 | **Stockage** | 1 To HDD | Monitoring SMART activé |
-| **Système** | Debian 12 minimal (headless) | Pas d'environnement de bureau |
+| **Système** | Debian 13 minimal (headless) | Pas d'environnement de bureau |
 | **Rôle** | NAS / Backup | NFS + réception vzdump + pg_dump |
 
 ### 2.3. Topologie physique
@@ -318,12 +318,12 @@ L'architecture repose sur un nœud Proxmox unique hébergeant une VM pfSense qui
 | Machine | Type | OS | RAM | Disque | VLAN | Services |
 |---------|------|----|-----|--------|------|----------|
 | pfSense | VM (KVM) | FreeBSD (pfSense CE) | 512 Mo | 8 Go | WAN + Trunk | Firewall, DHCP, DNS |
-| Nginx | CT LXC | Debian 12 | 256 Mo | 4 Go | 20 | Reverse proxy, TLS |
-| PostgreSQL | CT LXC | Debian 12 | 512 Mo | 10 Go | 20 | BDD applicative |
-| Monitoring | CT LXC | Debian 12 | 512 Mo | 15 Go | 20 | VictoriaMetrics, Grafana |
-| Forgejo | CT LXC | Debian 12 | 384 Mo | 10 Go | 30 | Git, webhooks |
-| Woodpecker | CT LXC | Debian 12 | 384 Mo | 10 Go | 30 | CI pipelines, Docker |
-| Registry | CT LXC | Debian 12 | 256 Mo | 20 Go | 30 | Docker Registry v2 |
+| Nginx | CT LXC | Debian 13 | 256 Mo | 4 Go | 20 | Reverse proxy, TLS |
+| PostgreSQL | CT LXC | Debian 13 | 512 Mo | 10 Go | 20 | BDD applicative |
+| Monitoring | CT LXC | Debian 13 | 512 Mo | 15 Go | 20 | VictoriaMetrics, Grafana |
+| Forgejo | CT LXC | Debian 13 | 384 Mo | 10 Go | 30 | Git, webhooks |
+| Woodpecker | CT LXC | Debian 13 | 384 Mo | 10 Go | 30 | CI pipelines, Docker |
+| Registry | CT LXC | Debian 13 | 256 Mo | 20 Go | 30 | Docker Registry v2 |
 | Kali Linux | VM (KVM) | Kali 2024.x | 2 Go | 30 Go | 40 | Pentest, nmap, scans |
 
 ### 6.3. Architecture de sauvegarde
@@ -361,7 +361,7 @@ Le projet est découpé en sept phases séquentielles, chacune ayant ses propres
 
 **PC 2 — NAS Debian :**
 
-1. Installation Debian 12 minimal (headless)
+1. Installation Debian 13 minimal (headless)
 2. Installation des paquets essentiels (NFS, rsync, GPG, SMART, Fail2ban, UFW)
 3. Création de l'arborescence `/backup/` et configuration des exports NFS
 4. Configuration UFW et hardening SSH

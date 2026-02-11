@@ -17,7 +17,7 @@ Ce projet sert à la fois de **plateforme d'apprentissage** et de **projet portf
 | Machine | CPU | RAM | Stockage | Rôle |
 |---------|-----|-----|----------|------|
 | **PC 1** | Intel i5-8265U (4C/8T) | 8 Go DDR4 | 250 Go SSD | Proxmox VE — Hyperviseur |
-| **PC 2** | Intel i5-5200U (2C/4T) | 8 Go DDR3L | 1 To HDD | Debian 12 — NAS / Backup |
+| **PC 2** | Intel i5-5200U (2C/4T) | 8 Go DDR3L | 1 To HDD | Debian 13 — NAS / Backup |
 
 ---
 
