@@ -270,6 +270,44 @@ Remplacer la VM Kali par Exegol, un environnement de pentest français basé sur
 
 ---
 
+## ADR-008 — OPNsense au lieu de pfSense CE
+
+**Date** : 14 février 2026
+**Statut** : Accepté
+
+### Contexte
+
+Le CDC initial prévoyait pfSense CE comme firewall/routeur. Depuis, Netgate (éditeur de pfSense) a déplacé des fonctionnalités vers pfSense Plus (payant), les patchs de sécurité arrivent en retard sur la version CE, et l'entreprise a eu des comportements controversés envers la communauté open source (faux domaine contre OPNsense). OPNsense, fork de pfSense depuis 2015, est devenu la recommandation majoritaire dans la communauté homelab.
+
+### Décision
+
+Utiliser OPNsense à la place de pfSense CE.
+
+### Alternatives considérées
+
+| Alternative | Description | Raison de l'écart |
+|-------------|-------------|-------------------|
+| pfSense CE | Documentation abondante, standard historique | Retard sur les patchs de sécurité, fonctionnalités migrées vers Plus (payant), téléchargement via store avec login obligatoire |
+| OPNsense | Fork de pfSense, même base FreeBSD, interface plus moderne (menu latéral vs menu supérieur) | Mises à jour de sécurité plus rapides, ISO téléchargeable directement, fidèle à la philosophie open source, communauté active |
+| VyOS / OpenWrt | Alternatives viables en tant que routeur/firewall | Moins adaptées à un rôle firewall/routeur avec Web UI pour un homelab d'apprentissage |
+
+### Conséquences
+
+**Gains :**
+- Mises à jour de sécurité plus fréquentes et transparentes
+- Interface Web UI plus intuitive pour l'apprentissage
+- Meilleur signal portfolio (tendance actuelle du marché homelab/entreprise)
+- ISO disponible sans friction (pas de store/login)
+
+**Compromis :**
+- Moins de documentation historique que pfSense (mais en croissance rapide)
+- Certains tutoriels/guides sont encore écrits pour pfSense, nécessite adaptation
+
+**Impact nul sur l'architecture :**
+- Mêmes fonctionnalités (VLANs, DHCP, DNS, firewall rules, VPN), même OS (FreeBSD), même consommation RAM (~512 Mo)
+
+---
+
 ## Index des ADR
 
 | ID | Titre | Statut | Date |
@@ -281,3 +319,4 @@ Remplacer la VM Kali par Exegol, un environnement de pentest français basé sur
 | ADR-005 | ext4 plutôt que ZFS | ✅ Accepté | 2026-02-10 |
 | ADR-006 | LXC natif plutôt que Docker partout | ✅ Accepté | 2026-02-10 |
 | ADR-007 | Exegol (Docker) au lieu de Kali Linux (VM) | ✅ Accepté | 2026-02-12 |
+| ADR-008 | OPNsense au lieu de pfSense CE | ✅ Accepté | 2026-02-14 |
